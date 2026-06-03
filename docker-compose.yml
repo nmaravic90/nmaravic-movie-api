@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: nmaravic-postgres
+    environment:
+      POSTGRES_DB: nmaravic-movie
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d nmaravic-movie"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - movie-network
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nmaravic-movie-api
+    environment:
+      SERVER_SERVLET_CONTEXT_PATH: /api/v1
+      DB_URL: jdbc:postgresql://postgres:5432/nmaravic-movie
+      DB_USERNAME: postgres
+      DB_PASSWORD: admin
+      KEYCLOAK_ISSUER_URI: http://localhost:8180/realms/movie-realm
+      SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK_SET_URI: http://host.docker.internal:8180/realms/movie-realm/protocol/openid-connect/certs
+      MOVIE_PAGE_SIZE: 20
+      MOVIE_TOP_RATED_LIMIT: 10
+      MOVIE_IMAGE_UPLOAD_DIR: /app/uploads/movies
+      MOVIE_IMAGE_SERVER_BASE_URL: http://localhost:8080/images
+      MANAGEMENT_SERVER_PORT: 8081
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - movie_uploads:/app/uploads/movies
+    networks:
+      - movie-network
+
+volumes:
+  postgres_data:
+  movie_uploads:
+
+networks:
+  movie-network:
+    driver: bridge
