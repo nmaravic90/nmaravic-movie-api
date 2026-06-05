@@ -12,10 +12,20 @@
     <artifactId>nmaravic-movie-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
+    <developers>
+        <developer>
+            <id>nmaravic90</id>
+            <name>Nikola Maravic</name>
+            <email>n.maravic90@gmaiil.com</email>
+            <url>https://github.com/nmaravic90</url>
+        </developer>
+    </developers>
+
     <properties>
         <openapi.generator.version>7.22.0</openapi.generator.version>
         <springdoc.openapi.version>3.0.3</springdoc.openapi.version>
-        <mapstruct.version>1.6.3</mapstruct.version>
+        <testcontainers.version>1.20.4</testcontainers.version>
+        <bucket4j.version>8.18.0</bucket4j.version>
     </properties>
 
     <dependencies>
@@ -60,7 +70,7 @@
         <dependency>
             <groupId>com.bucket4j</groupId>
             <artifactId>bucket4j_jdk17-core</artifactId>
-            <version>8.18.0</version>
+            <version>${bucket4j.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -85,13 +95,13 @@
     <dependency>
         <groupId>org.testcontainers</groupId>
         <artifactId>junit-jupiter</artifactId>
-        <version>1.20.4</version>
+        <version>${testcontainers.version}</version>
         <scope>test</scope>
     </dependency>
         <dependency>
             <groupId>org.testcontainers</groupId>
             <artifactId>postgresql</artifactId>
-            <version>1.20.4</version>
+            <version>${testcontainers.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

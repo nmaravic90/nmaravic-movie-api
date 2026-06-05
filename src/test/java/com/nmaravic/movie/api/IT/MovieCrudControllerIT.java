@@ -3,6 +3,7 @@ package com.nmaravic.movie.api.IT;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.MediaType;
+import tools.jackson.databind.ObjectMapper;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -78,7 +79,7 @@ class MovieCrudControllerIT extends BaseIntegrationTest {
                 .andExpect(status().isCreated())
                 .andReturn().getResponse().getContentAsString();
 
-        Long id = extractId(responseBody);
+        Long id = extractMovieId(responseBody);
 
         mockMvc.perform(withAdmin(delete("/movies/{id}", id)))
                 .andExpect(status().isNoContent());
@@ -100,7 +101,7 @@ class MovieCrudControllerIT extends BaseIntegrationTest {
                 .andExpect(status().isCreated())
                 .andReturn().getResponse().getContentAsString();
 
-        Long id = extractId(responseBody);
+        Long id = extractMovieId(responseBody);
 
         mockMvc.perform(withAdmin(put("/movies/{id}", id))
                         .contentType(MediaType.APPLICATION_JSON)
@@ -127,7 +128,7 @@ class MovieCrudControllerIT extends BaseIntegrationTest {
                 .andExpect(status().isCreated())
                 .andReturn().getResponse().getContentAsString();
 
-        Long id = extractId(responseBody);
+        Long id = extractMovieId(responseBody);
 
         String patchBody = """
                 {
@@ -158,8 +159,10 @@ class MovieCrudControllerIT extends BaseIntegrationTest {
                 .andExpect(status().isNotFound());
     }
 
-    private Long extractId(String json) {
-        String idStr = json.replaceAll(".*\"id\":(\\d+).*", "$1");
-        return Long.parseLong(idStr);
+    private Long extractMovieId(String json) throws Exception {
+        return new ObjectMapper()
+                .readTree(json)
+                .get("id")
+                .asLong();
     }
 }

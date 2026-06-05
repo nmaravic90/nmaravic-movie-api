@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockMultipartFile;
+import tools.jackson.databind.ObjectMapper;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -32,7 +33,7 @@ class MovieImageControllerIT extends BaseIntegrationTest {
                 .andExpect(status().isCreated())
                 .andReturn().getResponse().getContentAsString();
 
-        movieId = extractId(responseBody);
+        movieId = extractMovieId(responseBody);
     }
 
     @AfterEach
@@ -187,8 +188,10 @@ class MovieImageControllerIT extends BaseIntegrationTest {
                 .andExpect(status().isNotFound());
     }
 
-    private Long extractId(String json) {
-        String idStr = json.replaceAll(".*\"id\":(\\d+).*", "$1");
-        return Long.parseLong(idStr);
+    private Long extractMovieId(String json) {
+        return new ObjectMapper()
+                .readTree(json)
+                .get("id")
+                .asLong();
     }
 }

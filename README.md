@@ -77,7 +77,7 @@ The easiest way to start and test the entire stack is using the provided automat
 - `/collection`: API test collections for Postman/Bruno.
 
 ## 🧪 Testing
-- **Java Suite**: `mvn test` (Integration tests with Testcontainers).
+- **Java Suite**: `mvn test` (JUnit, Mockito, IT, Testcontainers).
 - **Automation Suite**: `python scripts/run_and_test.py`
 - **Manual API Tests**: Use collections in `/collection`.
 
