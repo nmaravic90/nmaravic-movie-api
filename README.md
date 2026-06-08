@@ -1,7 +1,12 @@
 # Movie API Service 🎬
 
-A REST API for Movie management built with the latest **Spring Boot 4.0** and **Java 26**.
+A hands-on REST API for Movie management built with **Spring Boot** and **Java**.
+Created to practice modern Java backend development including API design, OAuth2 security,
+integration testing, and Docker deployments.
 
+## 📊 Status
+[![CI Pipeline](https://github.com/nmaravic90/nmaravic-movie-api/actions/workflows/ci.yml/badge.svg)](https://github.com/nmaravic90/nmaravic-movie-api/actions/workflows/ci.yml)
+## 🛠️ Technologies
 ![Java](https://img.shields.io/badge/Java_26-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot_4.0-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL_16-316192?style=for-the-badge&logo=postgresql&logoColor=white)
@@ -12,7 +17,7 @@ A REST API for Movie management built with the latest **Spring Boot 4.0** and **
 ![Mockito](https://img.shields.io/badge/Mockito-5-6DB33F?style=for-the-badge&logoColor=white)
 ![Testcontainers](https://img.shields.io/badge/Testcontainers-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Bruno](https://img.shields.io/badge/Bruno-FF6C37?style=for-the-badge&logoColor=white)
+![Bruno](https://img.shields.io/badge/Bruno-EA7343?style=for-the-badge&logoColor=white)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
 ![Python](https://img.shields.io/badge/Python_3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
@@ -21,12 +26,6 @@ A REST API for Movie management built with the latest **Spring Boot 4.0** and **
 - **Advanced Security**: OAuth2 Resource Server with JWT integration.
 - **Production Ready**: Rate limiting (Bucket4j) and Docker builds.
 - **Robust Testing**: Unit tests with **JUnit 5** & **Mockito**, and Integration tests using **Testcontainers** (PostgreSQL).
-
-## 🛠 Tech Stack
-- **Backend**: Java 26, Spring Boot 4.0.x, Maven
-- **Database**: PostgreSQL, Spring Data JPA
-- **Automation**: Python 3.x
-- **DevOps**: Docker & Docker Compose
 
 ## ⚙️ Configuration
 The application uses environment variables for configuration. You can set these in your `.env` file or environment.
@@ -82,4 +81,4 @@ The easiest way to start and test the entire stack is using the provided automat
 - **Automation Suite**: `python scripts/run_and_test.py`
 - **Manual API Tests**: Use collections in `/collection`.
 ---
-**Author**: Nikola Maravic
+**Author**: [Nikola Maravić](https://github.com/nmaravic90)
