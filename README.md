@@ -2,18 +2,19 @@
 
 A REST API for Movie management built with the latest **Spring Boot 4.0** and **Java 26**.
 
-![Java](https://img.shields.io/badge/Java-26-orange)
-![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.0-green)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-blue)
-![Keycloak](https://img.shields.io/badge/Keycloak-JWT-4D4D4D?logo=keycloak&logoColor=white)
-![Bucket4j](https://img.shields.io/badge/Bucket4j-Rate%20Limiting-blue)
-![Docker](https://img.shields.io/badge/Docker-ready-2496ED)
-
-![JUnit5](https://img.shields.io/badge/JUnit-5-25A162?logo=junit5&logoColor=white)
-![Mockito](https://img.shields.io/badge/Mockito-5-green)
-![Testcontainers](https://img.shields.io/badge/Testcontainers-PostgreSQL-2496ED?logo=docker&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)
-![Bruno](https://img.shields.io/badge/Bruno-API%20Client-orange?logo=bruno&logoColor=white)
+![Java](https://img.shields.io/badge/Java_26-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot_4.0-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL_16-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![Keycloak](https://img.shields.io/badge/Keycloak-4D4D4D?style=for-the-badge&logo=keycloak&logoColor=white)
+![OpenAPI](https://img.shields.io/badge/OpenAPI-6BA539?style=for-the-badge&logo=openapiinitiative&logoColor=white)
+![Bucket4j](https://img.shields.io/badge/Bucket4j_Rate_Limiting-0052CC?style=for-the-badge&logoColor=white)
+![JUnit5](https://img.shields.io/badge/JUnit_5-25A162?style=for-the-badge&logo=junit5&logoColor=white)
+![Mockito](https://img.shields.io/badge/Mockito-5-6DB33F?style=for-the-badge&logoColor=white)
+![Testcontainers](https://img.shields.io/badge/Testcontainers-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Bruno](https://img.shields.io/badge/Bruno-FF6C37?style=for-the-badge&logoColor=white)
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+![Python](https://img.shields.io/badge/Python_3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
 ## 🚀 Features
 - **Contract-First Development**: API defined and generated via OpenAPI specs.
@@ -80,6 +81,5 @@ The easiest way to start and test the entire stack is using the provided automat
 - **Java Suite**: `mvn test` (JUnit, Mockito, IT, Testcontainers).
 - **Automation Suite**: `python scripts/run_and_test.py`
 - **Manual API Tests**: Use collections in `/collection`.
-
 ---
 **Author**: Nikola Maravic
