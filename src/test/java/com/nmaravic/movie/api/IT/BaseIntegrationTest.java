@@ -1,5 +1,5 @@
 package com.nmaravic.movie.api.IT;
-;
+
 import com.nmaravic.movie.api.database.repository.MovieImageRepository;
 import com.nmaravic.movie.api.database.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
